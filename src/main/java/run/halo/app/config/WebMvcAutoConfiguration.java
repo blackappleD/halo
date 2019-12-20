@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import freemarker.template.TemplateException;
 import freemarker.template.TemplateExceptionHandler;
 import lombok.extern.slf4j.Slf4j;
+import okhttp3.OkHttpClient;
 import org.springframework.boot.jackson.JsonComponentModule;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -152,5 +153,10 @@ public class WebMvcAutoConfiguration implements WebMvcConfigurer {
         resolver.setSuffix(HaloConst.SUFFIX_FTL);
         resolver.setContentType("text/html; charset=UTF-8");
         registry.viewResolver(resolver);
+    }
+
+    @Bean
+    public OkHttpClient okHttpClientFactory(){
+        return new OkHttpClient();
     }
 }
