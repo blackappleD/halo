@@ -25,7 +25,7 @@ public class TestTask {
     @Resource
     private OkHttpClient okHttpClient;
 
-    @Scheduled(cron = "*/5 * * * * ?")
+    @Scheduled(cron = "0 0/15 * * * ? ")
     public void test() throws IOException {
         log.info("开始请求！");
         Request request = new Request.Builder()
