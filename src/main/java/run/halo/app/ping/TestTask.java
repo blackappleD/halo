@@ -29,7 +29,7 @@ public class TestTask {
     public void test() throws IOException {
         log.info("开始请求！");
         Request request = new Request.Builder()
-                .url("http://localhost:8090/api/test")
+                .url("https://halo-tp.herokuapp.com/api/test")
                 .get()
                 .build();
         Response response = okHttpClient.newCall(request).execute();
